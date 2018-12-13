@@ -7,7 +7,7 @@ namespace SimplBill.Models
 {
     public class ProductDetailModel : BaseModel
     {
-        public uint ProductDetailId { get; private set; }
+        public uint Id { get; private set; }
 
         private decimal quantity;
 
@@ -61,6 +61,8 @@ namespace SimplBill.Models
                 OnPropertyChanged(nameof(MeasureType));
             }
         }
+
+        public BillDetailModel BillDetail { get; set; }
 
         public decimal Amount { get { return CostPrice * Quantity; } }
     }

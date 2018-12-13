@@ -20,10 +20,10 @@ namespace SimplBill.WPF
     /// </summary>
     public partial class MainView : UserControl
     {
-        public MainView()
+        public MainView(MainViewModel mainViewModel)
         {
             InitializeComponent();
-            this.DataContext = new MainViewModel();
+            this.DataContext = mainViewModel;
         }
     }
 }

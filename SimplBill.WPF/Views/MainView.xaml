@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SimplBill.WPF"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="1050">
     <UserControl.Resources>
         <!--<Style TargetType="{x:Type Menu}" BasedOn="{DynamicResource Mater}">
             <Setter Property="MinHeight" Value="30"/>
@@ -17,7 +17,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>-->
     </UserControl.Resources>
-    <Grid Margin="5 5 0 5">
+    <Grid Margin="5 5 5 5" Background="LightGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -27,6 +27,6 @@
                 <MenuItem Name="NewBill" Header="New Bill" Command="{Binding ChangeViewCommand}" CommandParameter="NewBill"/>
             </MenuItem>
         </Menu>
-        <ContentControl Grid.Row="1" Name="MainContent" Content="{Binding MainContentView}" Background="Blue"/>
+        <ContentControl BorderBrush="CadetBlue" BorderThickness="1" HorizontalAlignment="Center" Width="1000" Grid.Row="1" Name="MainContent" Content="{Binding MainContentView}" />
     </Grid>
 </UserControl>

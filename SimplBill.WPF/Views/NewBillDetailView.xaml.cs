@@ -31,10 +31,25 @@ namespace SimplBill.WPF.Views
             newBillDetailViewModel = new NewBillDetailViewModel();
             SellingProductsDataGrid.ItemsSource = new ListCollectionView(newBillDetailViewModel.SellingProducs);
             PurchasingProductsDataGrid.ItemsSource = new ListCollectionView(newBillDetailViewModel.PurchasingProducts);
+
             SellingProductsDataGrid.AddingNewItem += SellingProductsDataGrid_AddingNewItem;
             SellingProductsDataGrid.InitializingNewItem += SellingProductsDataGrid_InitializingNewItem;
 
+            PurchasingProductsDataGrid.AddingNewItem += PurchasingProductsDataGrid_AddingNewItem;
+            PurchasingProductsDataGrid.InitializingNewItem += PurchasingProductsDataGrid_InitializingNewItem;
+
             this.DataContext = newBillDetailViewModel;
+        }
+
+        private void PurchasingProductsDataGrid_InitializingNewItem(object sender, InitializingNewItemEventArgs e)
+        {
+            ProductDetailModel productDetailModel = e.NewItem as ProductDetailModel;
+            productDetailModel.MeasureType = MeasureType.InKgs;
+        }
+
+        private void PurchasingProductsDataGrid_AddingNewItem(object sender, AddingNewItemEventArgs e)
+        {
+            e.NewItem = new ProductDetailModel();
         }
 
         private void SellingProductsDataGrid_InitializingNewItem(object sender, InitializingNewItemEventArgs e)

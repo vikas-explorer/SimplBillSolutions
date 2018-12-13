@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimplBill.WPF.Printing;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -47,8 +48,6 @@ namespace SimplBill.WPF.Core
 
         public virtual void Print(object parameter)
         {
-            PrintBill print = new PrintBill();
-            print.Print();
         }
 
         public virtual bool CanPrint(object parameter)

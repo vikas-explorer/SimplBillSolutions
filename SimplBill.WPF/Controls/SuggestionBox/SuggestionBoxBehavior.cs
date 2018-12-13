@@ -41,6 +41,8 @@ namespace SimplBill.WPF.Controls
         /// Using a DependencyProperty as the backing store for Provider.  This enables animation, styling, binding, etc...
         /// </summary>
         public static readonly DependencyProperty ProviderProperty;
+
+        public static readonly DependencyProperty SelectedItemProperty;
         #endregion
 
         #region Static Constructor
@@ -52,6 +54,7 @@ namespace SimplBill.WPF.Controls
             MasterListProperty = DependencyProperty.RegisterAttached("MasterList", typeof(object), typeof(SuggestionBoxBehavior), new UIPropertyMetadata(null));
             ItemTemplateProperty = DependencyProperty.RegisterAttached("ItemTemplate", typeof(DataTemplate), typeof(SuggestionBoxBehavior), new UIPropertyMetadata(null));
             ProviderProperty = DependencyProperty.RegisterAttached("Provider", typeof(ISuggestionProvider), typeof(SuggestionBoxBehavior), new UIPropertyMetadata(null));
+            SelectedItemProperty = DependencyProperty.RegisterAttached("SelectedItem", typeof(object), typeof(SuggestionBoxBehavior), new UIPropertyMetadata(null));
         }
         #endregion
 
@@ -189,6 +192,11 @@ namespace SimplBill.WPF.Controls
         public static void SetItemTemplate(DependencyObject obj, DataTemplate value)
         {
             obj.SetValue(ItemTemplateProperty, value);
+        }
+
+        public static void SetSelectedItem(DependencyObject obj, object value)
+        {
+            obj.SetValue(SelectedItemProperty, value);
         }
         #endregion
     }

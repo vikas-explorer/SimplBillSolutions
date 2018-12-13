@@ -6,10 +6,12 @@ namespace SimplBill.Models
 {
     public class CustomerModel
     {
-        public uint CustomerId { get; set; }
+        public uint Id { get; set; }
 
         public string Name { get; set; }
 
         public string PhoneNumber { get; set; }
+
+        public ICollection<BillDetailModel> BillDetails { get; set; }
     }
 }

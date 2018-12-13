@@ -6,7 +6,7 @@ namespace SimplBill.Models
 {
     public class ProductInfoModel
     {
-        public uint ProductInfoId { get; set; }
+        public uint Id { get; set; }
 
         public string Name { get; set; }
 
@@ -14,7 +14,7 @@ namespace SimplBill.Models
 
         public decimal Price { get; set; }
 
-        public List<string> ProductTags { get; set; }
+        //public List<string> ProductTags { get; set; }
 
         
     }

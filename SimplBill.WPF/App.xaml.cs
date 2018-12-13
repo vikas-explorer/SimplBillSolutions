@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimplBill.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -20,7 +21,14 @@ namespace SimplBill.WPF
 
             IUnityContainer unityContainer = new UnityContainer();
 
-            var window = new MainWindow();
+            unityContainer.RegisterSingleton(typeof(BillingContext));
+
+            unityContainer.RegisterType(typeof(MainViewModel));
+
+            unityContainer.RegisterType(typeof(MainView));
+
+            unityContainer.RegisterType(typeof(MainWindow));
+            MainWindow window = unityContainer.Resolve<MainWindow>();
             window.Show();
         }
     }

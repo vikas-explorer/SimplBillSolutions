@@ -228,8 +228,11 @@ namespace SimplBill.WPF.Controls
         {
             //if item is not valid
             if (item == null)
+            {
+                sourceTextBox.SetValue(SuggestionBoxBehavior.SelectedItemProperty, item);
                 //exit method
                 return;
+            }
             //mark a flag as we are changing values
             suppressTextChange = true;
             //see if we have suggestion provider

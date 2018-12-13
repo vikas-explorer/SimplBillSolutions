@@ -1,4 +1,5 @@
-﻿using SimplBill.WPF.Core;
+﻿using SimplBill.Models;
+using SimplBill.WPF.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ namespace SimplBill.WPF
     {
         public RelayCommand ChangeViewCommand { get; set; }
 
-        public MainViewModel()
+        public MainViewModel(BillingContext billingContext)
         {
             ChangeViewCommand = new RelayCommand(ChangeView);
         }
